@@ -1,0 +1,87 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	color: #151513;
+}
+
+.header {
+	text-align: center;
+}
+
+.wrapper {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.container {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.name {
+	margin: 0;
+}
+
+.title {
+	margin: 0;
+	font-weight: 300;
+}
+
+.social-svg {
+	width: 32px;
+	height: 32px;
+}
+
+.github-corner:hover .octo-arm {
+	animation: octocat-wave 560ms ease-in-out;
+}
+
+.github-corner svg {
+	color: #fff;
+	position: absolute;
+	top: 0;
+	border: 0;
+	right: 0;
+}
+
+.github-corner .octo-arm {
+	transform-origin: 130px 106px;
+}
+
+@keyframes octocat-wave {
+	0%, 100% {
+		transform: rotate(0);
+	}
+
+	20%, 60% {
+		transform: rotate(-25deg);
+	}
+
+	40%, 80% {
+		transform: rotate(10deg);
+	}
+}
+
+@media (max-width: 500px) {
+	.github-corner:hover .octo-arm {
+		animation: none;
+	}
+
+	.github-corner .octo-arm {
+		animation: octocat-wave 560ms ease-in-out;
+	}
+}
