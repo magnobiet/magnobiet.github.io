@@ -1,0 +1,12 @@
+CACHE MANIFEST
+
+# 57241d4
+
+CACHE:
+/
+
+NETWORK:
+*
+
+FALLBACK:
+/ /
