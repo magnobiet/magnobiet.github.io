@@ -12,7 +12,12 @@ Proudly hosted by [GitHub](https://github.com/).
 
 ```bash
 git clone git@github.com:magnobiet/magnobiet.github.io.git magnobiet.com && cd $_
+
+# HTTP Server with Python 2
 python -m SimpleHTTPServer
+
+# HTTP Server with Python 3
+python -m http.server
 ```
 
 ## Licence
