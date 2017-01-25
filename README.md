@@ -20,6 +20,16 @@ python -m SimpleHTTPServer
 python -m http.server
 ```
 
+## Reports
+
+- Network Tools
+  - [MXToolBox](http://mxtoolbox.com/SuperTool.aspx)
+- SSL
+  - [Qualys SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=magnobiet.com)
+- Performance 
+  - [GTmetrix](https://gtmetrix.com/)
+  - [WebPagetest](http://www.webpagetest.org/)
+
 ## Licence
 
 [MIT](https://magno.mit-license.org/)
