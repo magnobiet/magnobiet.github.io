@@ -32,4 +32,4 @@ python -m http.server
 
 ## Licence
 
-[MIT](https://magno.mit-license.org/)
+This project is licensed under the [MIT License](https://magno.mit-license.org/2016). Copyright © Magno Biét
