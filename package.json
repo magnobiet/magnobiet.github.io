@@ -1,0 +1,36 @@
+{
+  "name": "magnobiet.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "gulp",
+    "serve": "npx http-server ./dist",
+    "start": "npm run build && npm run serve",
+    "publish": "gulp publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magnobiet/magnobiet.github.io.git"
+  },
+  "keywords": [],
+  "author": "Magno Biét <magno.biet@gmail.com> (https://magnobiet.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/magnobiet/magnobiet.github.io/issues"
+  },
+  "homepage": "https://github.com/magnobiet/magnobiet.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-build-branch": "^0.1.4",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-jsonmin": "^1.1.0",
+    "gulp-real-favicon": "^0.2.2",
+    "gulp-rimraf": "^0.2.2",
+    "gulp-uglify": "^3.0.0",
+    "run-sequence": "^2.2.1",
+    "sw-precache": "^5.2.0"
+  }
+}

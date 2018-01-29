@@ -26,7 +26,7 @@ python -m http.server
   - [MXToolBox](http://mxtoolbox.com/SuperTool.aspx)
 - SSL
   - [Qualys SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=magnobiet.com)
-- Performance 
+- Performance
   - [GTmetrix](https://gtmetrix.com/)
   - [WebPagetest](http://www.webpagetest.org/)
 
