@@ -162,7 +162,7 @@ gulp.task('build', (callback) => runSequence(
 
 gulp.task('publish', ['build'], () => buildBranch({
 	folder: DIST_PATH,
-	branch: 'gh-pages',
+	branch: 'master',
 	commit: `Build ${ new Date() }`
 }));
 
