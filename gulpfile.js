@@ -124,7 +124,9 @@ gulp.task('jsonmin', () => gulp.src([
 gulp.task('move', () => gulp.src([
 	`${ TMP_PATH }favicon.ico`,
 	`${ TMP_PATH }browserconfig.xml`,
-	`${ SRC_PATH }CNAME`
+	`${ SRC_PATH }CNAME`,
+	'./LICENSE',
+	'./README.md'
 ]).pipe(
 	gulp.dest(DIST_PATH)
 ));
