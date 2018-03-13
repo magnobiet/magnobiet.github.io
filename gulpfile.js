@@ -18,7 +18,7 @@ const DIST_PATH = './dist/';
 const THEME_COLOR = '#151513';
 
 gulp.task('generate-favicon', (done) => realFavicon.generateFavicon({
-	masterPicture: `${ SRC_PATH  }favicon.svg`,
+	masterPicture: `${ SRC_PATH }favicon.svg`,
 	dest: `${ TMP_PATH }`,
 	iconsPath: '/assets/images/icons/',
 	design: {
@@ -55,7 +55,7 @@ gulp.task('generate-favicon', (done) => realFavicon.generateFavicon({
 			themeColor: THEME_COLOR,
 			manifest: {
 				name: 'Magno Biét',
-				startUrl: '/?launcher=true',
+				startUrl: '/?launcher=true&utm_source=homescreen',
 				display: 'standalone',
 				orientation: 'portrait',
 				onConflict: 'override',
@@ -114,7 +114,7 @@ gulp.task('jsmin', () => gulp.src([
 ));
 
 gulp.task('jsonmin', () => gulp.src([
-	`${ TMP_PATH }manifest.json`,
+	`${ TMP_PATH }site.webmanifest`,
 ]).pipe(
 	jsonmin()
 ).pipe(
@@ -163,7 +163,7 @@ gulp.task('build', (callback) => runSequence(
 gulp.task('publish', ['build'], () => buildBranch({
 	folder: DIST_PATH,
 	branch: 'master',
-	commit: `Build ${ new Date() }`
+	commit: `Build ${ new Date(Date.now()).toLocaleString() }`
 }));
 
 gulp.task('default', ['build']);
