@@ -11,7 +11,8 @@ html {
 
 body {
 	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-	color: #151513;
+	color: #fff;
+	background: #24292e;
 }
 
 .header {
@@ -24,22 +25,17 @@ body {
 	box-sizing: border-box;
 	width: 100%;
 	height: 100%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
-	border-top: 4px solid #151513;
 }
 
 .container {
 	position: relative;
 	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
 
 .name {
-	font-size: 2.6em;
+	font-size: 2.6rem;
 	margin: 0;
 }
 
@@ -63,67 +59,69 @@ body {
 	left: 0;
 	display: block;
 	width: 100%;
-	height: 1px;
+	height: 0.1rem;
 	content: '';
-	background: #eee;
+	background: rgba(255, 255, 255, 0.25);
 }
 
 .title span {
 	position: relative;
 	z-index: 1;
-	padding: 0 15px;
-	background: #fff;
+	padding: 0 1rem;
+	background: #24292e;
+	display: inline-block;
 }
 
 .footer {
 	position: fixed;
-	bottom: 1em;
+	bottom: 1rem;
 	width: 100%;
 	text-align: center;
 }
 
-.footer .social-icon {
-	display: inline-block;
-	width: 32px;
-	height: 32px;
-	padding: 0 1em;
+.footer a {
+	text-transform: lowercase;
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.footer a::after {
+	content: '/ ';
+}
+
+.footer a:last-child::after {
+	content: '';
 }
 
 .github-corner:hover .octo-arm {
 	-webkit-animation: octocat-wave 560ms ease-in-out;
-	animation: octocat-wave 560ms ease-in-out;
+	animation: octocat-wave 560ms ease-in-out
 }
 
 .github-corner svg {
 	position: absolute;
 	top: 0;
 	right: 0;
-	color: #fff;
-	border: 0;
+	border: 0
 }
 
 .github-corner .octo-arm {
-	-webkit-transform-origin: 130px 106px;
-	-ms-transform-origin: 130px 106px;
 	transform-origin: 130px 106px;
 }
 
 @-webkit-keyframes octocat-wave {
 	0%,
 	100% {
-		-webkit-transform: rotate(0);
 		transform: rotate(0);
 	}
 
 	20%,
 	60% {
-		-webkit-transform: rotate(-25deg);
 		transform: rotate(-25deg);
 	}
 
 	40%,
 	80% {
-		-webkit-transform: rotate(10deg);
 		transform: rotate(10deg);
 	}
 }
@@ -131,31 +129,26 @@ body {
 @keyframes octocat-wave {
 	0%,
 	100% {
-		-webkit-transform: rotate(0);
 		transform: rotate(0);
 	}
 
 	20%,
 	60% {
-		-webkit-transform: rotate(-25deg);
 		transform: rotate(-25deg);
 	}
 
 	40%,
 	80% {
-		-webkit-transform: rotate(10deg);
 		transform: rotate(10deg);
 	}
 }
 
 @media (max-width: 500px) {
 	.github-corner:hover .octo-arm {
-		-webkit-animation: none;
 		animation: none;
 	}
 
 	.github-corner .octo-arm {
-		-webkit-animation: octocat-wave 560ms ease-in-out;
 		animation: octocat-wave 560ms ease-in-out;
 	}
 }
