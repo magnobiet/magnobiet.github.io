@@ -1,23 +1,16 @@
 'use strict';
 
 const gulp = require('gulp');
-const realFavicon = require('gulp-real-favicon');
-const rimraf = require('gulp-rimraf');
-const imagemin = require('gulp-imagemin');
+const $ = require('gulp-load-plugins')();
 const runSequence = require('run-sequence');
 const swPrecache = require('sw-precache');
-const htmlmin = require('gulp-htmlmin');
-const cssmin = require('gulp-cssmin');
-const uglify = require('gulp-uglify');
-const jsonmin = require('gulp-jsonmin');
-const buildBranch = require('gulp-build-branch');
 
 const TMP_PATH = './.tmp/';
 const SRC_PATH = './src/';
 const DIST_PATH = './dist/';
-const THEME_COLOR = '#151513';
+const THEME_COLOR = '#24292e';
 
-gulp.task('generate-favicon', (done) => realFavicon.generateFavicon({
+gulp.task('generate-favicon', (done) => $.realFavicon.generateFavicon({
 	masterPicture: `${ SRC_PATH }favicon.svg`,
 	dest: `${ TMP_PATH }`,
 	iconsPath: '/assets/images/icons/',
@@ -79,7 +72,7 @@ gulp.task('generate-favicon', (done) => realFavicon.generateFavicon({
 }, () => done()));
 
 gulp.task('imagemin', () => gulp.src(`${ TMP_PATH }**/*.+(png|jpg|svg)`).pipe(
-	imagemin()
+	$.imagemin()
 ).pipe(
 	gulp.dest(`${ DIST_PATH }assets/images/icons/`)
 ));
@@ -87,7 +80,7 @@ gulp.task('imagemin', () => gulp.src(`${ TMP_PATH }**/*.+(png|jpg|svg)`).pipe(
 gulp.task('htmlmin', () => gulp.src([
 	`${ SRC_PATH }**/*.html`
 ]).pipe(
-	htmlmin({
+	$.htmlmin({
 		collapseWhitespace: true,
 		minifyJS: true,
 		minifyCSS: true,
@@ -99,7 +92,12 @@ gulp.task('htmlmin', () => gulp.src([
 ));
 
 gulp.task('cssmin', () => gulp.src(`${ SRC_PATH }styles/*.css`).pipe(
-	cssmin()
+	$.autoprefixer({
+		browsers: ['last 10 versions'],
+		cascade: false
+	})
+).pipe(
+	$.cssmin()
 ).pipe(
 	gulp.dest(`${ DIST_PATH }assets/styles/`)
 ));
@@ -108,7 +106,7 @@ gulp.task('jsmin', () => gulp.src([
 	`${ SRC_PATH }scripts/*.js`,
 	`${ TMP_PATH }*.js`
 ]).pipe(
-	uglify()
+	$.uglify()
 ).pipe(
 	gulp.dest(`${ DIST_PATH }assets/scripts/`)
 ));
@@ -116,7 +114,7 @@ gulp.task('jsmin', () => gulp.src([
 gulp.task('jsonmin', () => gulp.src([
 	`${ TMP_PATH }site.webmanifest`,
 ]).pipe(
-	jsonmin()
+	$.jsonmin()
 ).pipe(
 	gulp.dest(DIST_PATH)
 ));
@@ -137,7 +135,7 @@ gulp.task('clean', () => gulp.src([
 ], {
 	read: false
 }).pipe(
-	rimraf()
+	$.rimraf()
 ));
 
 gulp.task('generate-service-worker', () => swPrecache.write(`${ TMP_PATH }service-worker.js`, {
@@ -160,7 +158,7 @@ gulp.task('build', (callback) => runSequence(
 	callback
 ));
 
-gulp.task('publish', ['build'], () => buildBranch({
+gulp.task('publish', ['build'], () => $.buildBranch({
 	folder: DIST_PATH,
 	branch: 'master',
 	commit: `Build ${ new Date(Date.now()).toLocaleString() }`
