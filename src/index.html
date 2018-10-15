@@ -68,9 +68,14 @@
 
 					<input type="hidden" name="redirectURL" value="https://magnobiet.com/#get-in-touch-success">
 
-					<input type="email" name="replyTo" placeholder="Your email" required>
-					<input type="text" name="subject" placeholder="Subject" required>
-					<textarea name="Message" placeholder="Your message" rows="4" required></textarea>
+					<label for="email">Email</label>
+					<input type="email" id="email" name="replyTo" required>
+
+					<label for="subject">Subject</label>
+					<input type="text" id="subject" name="subject" required>
+
+					<label for="message">Message</label>
+					<textarea id="message" name="Message" rows="4" required></textarea>
 
 					<button type="submit">Send</button>
 
