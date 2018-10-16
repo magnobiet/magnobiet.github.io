@@ -2,6 +2,8 @@
 
 > Made with ♥ using [vanilla](https://github.com/magnobiet/vanilla).
 
+![Screen shot](screen-shot.png)
+
 Proudly hosted by [GitHub](https://github.com/).
 
 [![CloudFlare](https://www.cloudflare.com/media/images/web-badges/cf-web-badges-c-gray-on.png)](https://www.cloudflare.com/)
