@@ -99,11 +99,12 @@ body {
 	animation: octocat-wave 560ms ease-in-out;
 }
 
-.github-corner svg {
+.github-corner {
 	position: absolute;
 	top: 0;
 	right: 0;
 	border: 0;
+	z-index: 1;
 }
 
 .github-corner .octo-arm {
