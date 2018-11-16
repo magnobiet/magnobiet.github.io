@@ -15,37 +15,6 @@ body {
 	background: #24292e;
 }
 
-input,
-textarea {
-	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-	padding: 1.3em;
-	border: .1em solid #ccc;
-	border-radius: .3em;
-	margin-bottom: 1em;
-	width: 100%;
-	box-sizing: border-box;
-	color: #2c3e50;
-	font-size: .8em;
-}
-
-button {
-	width: 6em;
-	background: #24292e;
-	color: #fff;
-	border: 0;
-	border-radius: .1em;
-	cursor: pointer;
-	padding: 1em;
-	float: right;
-	font-size: 1em;
-}
-
-button:hover,
-button:focus {
-	box-shadow: 0 0 0 0.1em #fff, 0 0 0 0.2em #000;
-	transition: all 0.3s;
-}
-
 .header {
 	text-align: center;
 }
@@ -123,52 +92,6 @@ button:focus {
 
 .footer a:last-child::after {
 	content: '';
-}
-
-.modal {
-	position: fixed;
-	background-color: rgba(255, 255, 255, 0.25);
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 999;
-	opacity: 0;
-	pointer-events: none;
-	transition: all 0.3s;
-}
-
-.modal:target {
-	opacity: 1;
-	pointer-events: auto;
-}
-
-.modal > .modal-content {
-	box-sizing: border-box;
-	width: 95vw;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	padding: 4em 2em 2em;
-	background: #ffffff;
-	color: #333333;
-}
-
-@media (min-width: 26em) {
-	.modal > .modal-content {
-		width: 25em;
-	}
-}
-
-.modal-close {
-	color: #aaa;
-	position: absolute;
-	right: 0;
-	top: 0;
-	text-decoration: none;
-	padding: 1em 2em 1em;
-	text-transform: lowercase;
 }
 
 .github-corner:hover .octo-arm {
