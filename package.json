@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "parcel -p 1989 watch ./src/index.html",
-    "build": "parcel build ./src/index.html --public-url ./",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "dev": "parcel -p 1989 watch ./src/*.html",
+    "start": "simple-server ./dist",
+    "clean": "rimraf .cache ./.tmp ./dist",
+    "clean:favicons": "cp ./dist/assets/images/icons/*.{xml,ico,*manifest}",
+    "build": "parcel build ./src/*.html --public-url ./",
+    "build:favicons": "real-favicon generate ./faviconDescription.json ./faviconData.json ./src/assets/images/icons",
+    "build:workbox": "workbox injectManifest ./workbox-config.js",
+    "copy": "cp {CNAME,LICENSE,README.md} ./dist",
+    "predeploy": "npm run clean && npm run build && npm run build:workbox && npm run copy",
+    "deploy": "gh-pages -d ./dist"
   },
   "repository": {
     "type": "git",
@@ -20,8 +26,12 @@
   },
   "homepage": "https://github.com/magnobiet/magnobiet.github.io#readme",
   "devDependencies": {
+    "cli-real-favicon": "0.0.8",
     "eslint": "^6.8.0",
     "gh-pages": "^2.1.1",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "rimraf": "^3.0.0",
+    "simple-server": "^1.1.1",
+    "workbox-cli": "^4.3.1"
   }
 }
