@@ -183,3 +183,5 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/node,sass,linux,macos,windows,visualstudiocode
 
 dist/
+faviconData.json
+.tmp
