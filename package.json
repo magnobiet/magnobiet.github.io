@@ -10,7 +10,7 @@
     "build": "parcel build ./src/*.html --public-url ./",
     "build:favicons": "real-favicon generate ./faviconDescription.json ./faviconData.json ./src/assets/images/icons",
     "build:workbox": "workbox injectManifest ./workbox-config.js",
-    "copy": "cp {CNAME,LICENSE,README.md} ./dist",
+    "copy": "cp {CNAME,LICENSE,README.md,screen-shot*.png} ./dist",
     "predeploy": "npm run clean && npm run build && npm run build:workbox && npm run copy",
     "deploy": "gh-pages --dist ./dist --branch master"
   },
