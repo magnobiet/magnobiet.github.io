@@ -2,12 +2,11 @@
   "name": "magnobiet.github.io",
   "version": "1.0.0",
   "description": "",
-  "main": "gulpfile.js",
   "scripts": {
-    "build": "gulp",
-    "serve": "npx http-server ./dist",
-    "start": "npm run build && npm run serve",
-    "publish": "gulp publish"
+    "dev": "parcel -p 1989 watch ./src/index.html",
+    "build": "parcel build ./src/index.html --public-url ./",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -21,19 +20,8 @@
   },
   "homepage": "https://github.com/magnobiet/magnobiet.github.io#readme",
   "devDependencies": {
-    "eslint": "^5.9.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-build-branch": "^0.1.4",
-    "gulp-cssmin": "^0.2.0",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^5.0.3",
-    "gulp-jsonmin": "^1.2.0",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-real-favicon": "^0.3.0",
-    "gulp-rimraf": "^0.2.2",
-    "gulp-uglify": "^3.0.1",
-    "run-sequence": "^2.2.1",
-    "sw-precache": "^5.2.1"
+    "eslint": "^6.8.0",
+    "gh-pages": "^2.1.1",
+    "parcel-bundler": "^1.12.4"
   }
 }
