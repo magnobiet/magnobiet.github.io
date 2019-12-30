@@ -12,7 +12,7 @@
     "build:workbox": "workbox injectManifest ./workbox-config.js",
     "copy": "cp {CNAME,LICENSE,README.md} ./dist",
     "predeploy": "npm run clean && npm run build && npm run build:workbox && npm run copy",
-    "deploy": "gh-pages -d ./dist"
+    "deploy": "gh-pages --dist ./dist --branch master"
   },
   "repository": {
     "type": "git",
