@@ -1,9 +1,7 @@
 :root {
   --default-font-size: 16px;
   --color-black: #000;
-  --color-black-transparent: #00010;
   --color-white: #fff;
-  --color-white-transparent: #fff15;
   --salutation-text: '👋 My name\'s';
 }
 
@@ -181,33 +179,34 @@ body.theme-dark {
 }
 
 .theme-dark .background-lines .line {
-  background: var(--color-white-transparent);
+  background: var(--color-white);
+  opacity: .15;
 }
 
 .background-lines .line {
   position: absolute;
-  width: 700px;
-  height: 1px;
-  background: var(--color-black-transparent);
+  height: 0.0625rem;
+  background: var(--color-black);
+  opacity: .1;
 }
 
 .background-lines .line:nth-child(1) {
   top: 50%;
-  left: -170px;
+  left: -10rem;
   width: 50%;
-  transform: rotate(28deg) scaleX(1);
+  transform: rotate(28deg);
 }
 
 .background-lines .line:nth-child(2) {
-  top: 150px;
+  top: 10rem;
   left: 50%;
   width: 50%;
-  transform: rotate(-28deg) scaleX(1);
+  transform: rotate(-28deg);
 }
 
 .background-lines .line:nth-child(3) {
-  right: -300px;
+  right: -18rem;
   bottom: 40%;
   width: 50%;
-  transform: rotate(28deg) scaleX(1);
+  transform: rotate(28deg);
 }
