@@ -16,25 +16,16 @@ Proudly hosted by [GitHub](https://github.com/).
 git clone git@github.com:magnobiet/magnobiet.github.io.git magnobiet.com && cd $_
 git checkout develop
 
-npm start
+npm install
+npm run dev
 ```
 
 ### Build
 
 ```bash
 npm run build
-npm run publish
+npm run deploy
 ```
-
-## Reports
-
-- Network Tools
-  - [MXToolBox](http://mxtoolbox.com/SuperTool.aspx)
-- SSL
-  - [Qualys SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=magnobiet.com)
-- Performance
-  - [GTmetrix](https://gtmetrix.com/)
-  - [WebPagetest](http://www.webpagetest.org/)
 
 ## Licence
 
