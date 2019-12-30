@@ -48,8 +48,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#24292e",
-  "background_color": "#24292e",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "start_url": "/?launcher=true&utm_source=homescreen",
   "display": "standalone",
   "orientation": "portrait"
