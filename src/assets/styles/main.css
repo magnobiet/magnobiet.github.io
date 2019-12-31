@@ -2,7 +2,7 @@
   --default-font-size: 16px;
   --color-black: #000;
   --color-white: #fff;
-  --salutation-text: '👋 My name\'s';
+  --salutation-text: "👋 My name's";
 }
 
 html,
@@ -18,9 +18,9 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-size: var(--default-font-size);
-  transition: background,color .3s ease-in-out;
+  transition: background, color 0.3s ease-in-out;
   color: var(--color-black);
   background: var(--color-white);
 }
@@ -35,7 +35,7 @@ body.theme-dark {
   height: 100vh;
   grid-template-columns: auto;
   grid-template-rows: min-content auto;
-  grid-template-areas: 'navigation' 'header';
+  grid-template-areas: "navigation" "header";
 }
 
 .header {
@@ -45,6 +45,13 @@ body.theme-dark {
   align-items: center;
 }
 
+/* @breakpoint on Iphone 6,7,8 + Security space = 414px + 26px  */
+@media only screen and (max-width: 440px) {
+  .header {
+    padding: 1rem 1rem 1rem 3rem;
+  }
+}
+
 .title {
   font-weight: lighter;
   display: block;
@@ -52,7 +59,7 @@ body.theme-dark {
 }
 
 .title::before {
-  content: 'I\'m a ';
+  content: "I'm a ";
 }
 
 .name {
@@ -72,8 +79,15 @@ body.theme-dark {
 
 .name::after {
   display: inline-block;
-  content: '.';
+  content: ".";
   text-indent: -1.875rem;
+}
+
+/* @breakpoint on Iphone 6,7,8 + Security space = 414px + 26px  */
+@media only screen and (max-width: 440px) {
+  .name {
+    font-size: 4.625rem;
+  }
 }
 
 .contacts {
@@ -86,7 +100,6 @@ body.theme-dark {
 
 .contacts ol {
   display: flex;
-  margin: 0;
   padding: 0;
   list-style: none;
   align-items: center;
@@ -94,18 +107,18 @@ body.theme-dark {
 
 .contacts li {
   display: inline-block;
-  padding-right: .25rem;
+  padding-right: 0.25rem;
 }
 
 .contacts li:not(:last-child)::after {
-  padding-left: .15rem;
-  content: '•';
+  padding-left: 0.15rem;
+  content: "•";
 }
 
 .contacts a {
-  font-size: .875rem;
+  font-size: 0.875rem;
   padding: 0;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   text-decoration: none;
   color: var(--color-black);
 }
@@ -116,7 +129,7 @@ body.theme-dark {
 
 .contacts a:hover,
 .contacts a:focus {
-  font-size: .975rem;
+  font-size: 0.975rem;
   font-weight: bold;
   text-decoration: none;
 }
@@ -148,11 +161,11 @@ body.theme-dark {
   display: block;
   width: 32px;
   height: 32px;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .toggle-theme path {
-  transition: fill .3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
   fill: var(--color-black);
 }
 
@@ -180,14 +193,14 @@ body.theme-dark {
 
 .theme-dark .background-lines .line {
   background: var(--color-white);
-  opacity: .15;
+  opacity: 0.15;
 }
 
 .background-lines .line {
   position: absolute;
   height: 0.0625rem;
   background: var(--color-black);
-  opacity: .1;
+  opacity: 0.1;
 }
 
 .background-lines .line:nth-child(1) {
