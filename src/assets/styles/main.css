@@ -45,18 +45,37 @@ body.theme-dark {
   align-items: center;
 }
 
+@media only screen and (max-width: 440px) {
+  .header {
+    padding-left: 3rem;
+  }
+}
+
 .title {
+  font-size: 1.875rem;
   font-weight: lighter;
   display: block;
   margin: 0;
 }
 
 .title::before {
+  font-size: 1.875rem;
   content: 'I\'m a ';
+}
+
+@media only screen and (max-width: 440px) {
+  .title {
+    font-size: .9375rem;
+  }
+
+  .title::before {
+    font-size: .9375rem;
+  }
 }
 
 .name {
   font-size: 5.625rem;
+  line-height: 1;
   margin: 0;
   text-transform: uppercase;
 }
@@ -65,7 +84,6 @@ body.theme-dark {
   font-size: 1.875rem;
   font-weight: normal;
   display: block;
-  margin-bottom: -1.5rem;
   content: var(--salutation-text);
   text-transform: initial;
 }
@@ -74,6 +92,21 @@ body.theme-dark {
   display: inline-block;
   content: '.';
   text-indent: -1.875rem;
+}
+
+@media only screen and (max-width: 440px) {
+  .name {
+    font-size: 2.8125rem;
+  }
+
+  .name::before {
+    font-size: .9375rem;
+    margin-bottom: 0;
+  }
+
+  .name::after {
+    text-indent: -.9375rem;
+  }
 }
 
 .contacts {
@@ -98,7 +131,7 @@ body.theme-dark {
 }
 
 .contacts li:not(:last-child)::after {
-  padding-left: .15rem;
+  padding-left: .125rem;
   content: '•';
 }
 
@@ -143,8 +176,8 @@ body.theme-dark {
 .toggle-theme svg {
   position: absolute;
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   transition: opacity .3s ease-in-out;
 }
 
