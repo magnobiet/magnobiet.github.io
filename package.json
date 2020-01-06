@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "parcel -p 1989 watch ./src/*.html",
+    "dev": "parcel -p 1989 watch ./src/index.html",
     "start": "simple-server ./dist",
     "clean": "rimraf .cache ./.tmp ./dist",
     "clean:favicons": "cp ./dist/assets/images/icons/*.{xml,ico,*manifest}",
