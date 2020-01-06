@@ -13,13 +13,40 @@ function $(element) {
 }
 
 function toggleClass(element, className) {
-	element.classList.toggle(className);
+	$(element).classList.toggle(className);
+}
+
+function addClass(element, className) {
+	$(element).className = className;
+}
+
+function getCurrentTheme() {
+	return localStorage.getItem('theme') || 'theme-dark';
+}
+
+function activateSavedTheme() {
+	addClass('body', getCurrentTheme());
+}
+
+function saveCurrentTheme() {
+	localStorage.setItem('theme', $('body').className || 'theme-dark');
+}
+
+function toggleTheme() {
+
+	toggleClass('body', 'theme-dark');
+	toggleClass('body', 'theme-light');
+
+	saveCurrentTheme();
+
 }
 
 onDocumentReady(() => {
 
-	$('[data-toggle-theme]').addEventListener('click', function() {
-		toggleClass($('body'), 'theme-dark');
+	activateSavedTheme();
+
+	$('[data-toggle-theme]').addEventListener('click', () => {
+		toggleTheme();
 	});
 
 });
