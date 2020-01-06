@@ -15,12 +15,16 @@ if (workbox) {
 
 	workbox.routing.registerRoute(
 		/^https:\/\/fonts\.googleapis\.com/,
-		new workbox.strategies.StaleWhileRevalidate({ cacheName: 'google-fonts-stylesheets' })
+		new workbox.strategies.CacheFirst({
+			cacheName: 'google-fonts-stylesheets'
+		})
 	);
 
 	workbox.routing.registerRoute(
 		/\.(?:js|css|html|json)$/,
-		new workbox.strategies.StaleWhileRevalidate()
+		new workbox.strategies.CacheFirst({
+			cacheName: 'static'
+		})
 	);
 
 	workbox.routing.registerRoute(
