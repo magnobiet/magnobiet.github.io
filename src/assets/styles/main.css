@@ -114,11 +114,8 @@ body.theme-dark {
   color: var(--color-white);
 }
 
-.contacts a:hover,
-.contacts a:focus {
-  font-size: .975rem;
-  font-weight: bold;
-  text-decoration: none;
+.contacts a:is(:hover, :focus) {
+  text-decoration: underline;
 }
 
 .toggle-theme {
@@ -179,15 +176,15 @@ body.theme-dark {
 }
 
 .theme-dark .background-lines .line {
-  background: var(--color-white);
   opacity: .15;
+  background: var(--color-white);
 }
 
 .background-lines .line {
   position: absolute;
-  height: 0.0625rem;
-  background: var(--color-black);
+  height: .0625rem;
   opacity: .1;
+  background: var(--color-black);
 }
 
 .background-lines .line:nth-child(1) {
