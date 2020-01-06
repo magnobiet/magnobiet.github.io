@@ -1,9 +1,11 @@
+/* global importScripts, workbox */
+
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 
 if (workbox) {
 
 	workbox.setConfig({
-		debug: true
+		debug: false
 	});
 
 	workbox.core.setCacheNameDetails({
@@ -13,12 +15,16 @@ if (workbox) {
 
 	workbox.routing.registerRoute(
 		/^https:\/\/fonts\.googleapis\.com/,
-		new workbox.strategies.StaleWhileRevalidate({ cacheName: 'google-fonts-stylesheets' })
+		new workbox.strategies.CacheFirst({
+			cacheName: 'google-fonts-stylesheets'
+		})
 	);
 
 	workbox.routing.registerRoute(
 		/\.(?:js|css|html|json)$/,
-		new workbox.strategies.StaleWhileRevalidate()
+		new workbox.strategies.CacheFirst({
+			cacheName: 'static'
+		})
 	);
 
 	workbox.routing.registerRoute(
@@ -76,8 +82,8 @@ if (workbox) {
     "revision": "ddb2b5314fc5e3611c681f50e64753c6"
   },
   {
-    "url": "app.fce5d259.js",
-    "revision": "ec1459de818818d9dd9dd83ca93a53b5"
+    "url": "app.0313c2ae.js",
+    "revision": "da866f60fc77188e5b5e8dcb1b2dcab4"
   },
   {
     "url": "apple-touch-icon.a7e3b695.png",
@@ -105,11 +111,11 @@ if (workbox) {
   },
   {
     "url": "index.html",
-    "revision": "5b85b0c41f9353c692783d9d8351af4a"
+    "revision": "e4b08916e01b77658697c2b457fdc11b"
   },
   {
-    "url": "main.e806f0d7.css",
-    "revision": "9ac7c13b1ee1c984f0926c2fae818044"
+    "url": "main.ed5a8dac.css",
+    "revision": "113fdb15e1c91718931c8390b2173061"
   },
   {
     "url": "safari-pinned-tab.1f2a1ca2.svg",
