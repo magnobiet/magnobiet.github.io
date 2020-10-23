@@ -1,9 +1,9 @@
 {
   "name": "magnobiet.github.io",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "scripts": {
-    "dev": "parcel -p 1989 watch ./src/index.html",
+    "dev": "parcel --open --https --port 1989 watch ./src/index.html",
     "start": "simple-server ./dist",
     "clean": "rimraf .cache ./.tmp ./dist",
     "clean:favicons": "cp ./dist/assets/images/icons/*.{xml,ico,*manifest}",
@@ -27,11 +27,11 @@
   "homepage": "https://github.com/magnobiet/magnobiet.github.io#readme",
   "devDependencies": {
     "cli-real-favicon": "0.0.8",
-    "eslint": "^6.8.0",
-    "gh-pages": "^2.1.1",
+    "eslint": "^7.11.0",
+    "gh-pages": "^3.1.0",
     "parcel-bundler": "^1.12.4",
-    "rimraf": "^3.0.0",
+    "rimraf": "^3.0.2",
     "simple-server": "^1.1.1",
-    "workbox-cli": "^4.3.1"
+    "workbox-cli": "^5.1.4"
   }
 }
