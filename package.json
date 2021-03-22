@@ -26,12 +26,12 @@
   },
   "homepage": "https://github.com/magnobiet/magnobiet.github.io#readme",
   "devDependencies": {
-    "cli-real-favicon": "0.0.8",
-    "eslint": "^7.11.0",
+    "cli-real-favicon": "^0.0.8",
+    "eslint": "^7.22.0",
     "gh-pages": "^3.1.0",
     "parcel-bundler": "^1.12.4",
     "rimraf": "^3.0.2",
     "simple-server": "^1.1.1",
-    "workbox-cli": "^5.1.4"
+    "workbox-cli": "^6.1.2"
   }
 }
