@@ -4,7 +4,7 @@
   "design": {
     "ios": {
       "pictureAspect": "backgroundAndMargin",
-      "backgroundColor": "#000000",
+      "backgroundColor": "#0c0c0c",
       "margin": "10%",
       "assets": {
         "ios6AndPriorIcons": false,
@@ -17,7 +17,7 @@
     "desktopBrowser": {},
     "windows": {
       "pictureAspect": "noChange",
-      "backgroundColor": "#000000",
+      "backgroundColor": "#0c0c0c",
       "onConflict": "override",
       "assets": {
         "windows80Ie10Tile": true,
@@ -33,8 +33,8 @@
     "androidChrome": {
       "pictureAspect": "backgroundAndMargin",
       "margin": "10%",
-      "backgroundColor": "#000000",
-      "themeColor": "#000000",
+      "backgroundColor": "#0c0c0c",
+      "themeColor": "#0c0c0c",
       "manifest": {
         "name": "Magno Biét",
         "startUrl": "https://magnobiet.com/",
@@ -50,7 +50,7 @@
     },
     "safariPinnedTab": {
       "pictureAspect": "silhouette",
-      "themeColor": "#000000"
+      "themeColor": "#0c0c0c"
     }
   },
   "settings": {

@@ -1,52 +1,54 @@
-function onDocumentReady(fn) {
+import { $, addClass, documentReady, toggleClass } from './document';
+import Favicon from './favicon';
 
-	if (document.readyState !== 'loading') {
-		fn();
-	} else {
-		document.addEventListener('DOMContentLoaded', fn);
-	}
+class App {
+
+  #favicon = new Favicon();
+
+  constructor() {
+    this.init();
+  }
+
+  #getCurrentTheme() {
+    return localStorage.getItem('theme') || 'theme-dark';
+  }
+
+  #activateSavedTheme() {
+    addClass('body', this.#getCurrentTheme());
+  }
+
+  #saveCurrentTheme() {
+    localStorage.setItem('theme', $('body').className || 'theme-dark');
+  }
+
+  #toggleTheme() {
+
+    toggleClass('body', 'theme-dark');
+    toggleClass('body', 'theme-light');
+
+    this.#saveCurrentTheme();
+
+  }
+
+  #replaceFavicon() {
+
+    this.#favicon.icons = ['🖥️', '🔗', '📧', '💻', '🤖', '💾', '🖱️', '⌨️', '👨‍💻']
+    this.#favicon.toggle(2500);
+
+  }
+
+  init() {
+
+    this.#activateSavedTheme();
+    this.#replaceFavicon();
+
+    $('[data-toggle-theme]').addEventListener('click', () => {
+
+      this.#toggleTheme();
+    });
+
+  }
 
 }
 
-function $(element) {
-	return document.querySelector(element);
-}
-
-function toggleClass(element, className) {
-	$(element).classList.toggle(className);
-}
-
-function addClass(element, className) {
-	$(element).className = className;
-}
-
-function getCurrentTheme() {
-	return localStorage.getItem('theme') || 'theme-dark';
-}
-
-function activateSavedTheme() {
-	addClass('body', getCurrentTheme());
-}
-
-function saveCurrentTheme() {
-	localStorage.setItem('theme', $('body').className || 'theme-dark');
-}
-
-function toggleTheme() {
-
-	toggleClass('body', 'theme-dark');
-	toggleClass('body', 'theme-light');
-
-	saveCurrentTheme();
-
-}
-
-onDocumentReady(() => {
-
-	activateSavedTheme();
-
-	$('[data-toggle-theme]').addEventListener('click', () => {
-		toggleTheme();
-	});
-
-});
+documentReady(() => new App());
