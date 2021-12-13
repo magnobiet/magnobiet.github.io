@@ -10,6 +10,8 @@ Proudly hosted by [GitHub](https://github.com/).
 
 ## TL;DR
 
+![Animated preview image](preview.gif)
+
 ### Development
 
 ```bash
