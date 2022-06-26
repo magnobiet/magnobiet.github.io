@@ -1,5 +1,7 @@
 # magnobiet.com
 
+![https://magnobiet.com/](https://img.shields.io/website?label=magnobiet.com&style=for-the-badge&url=https://magnobiet.com/)
+
 > Made with ♥ using [vanilla](https://github.com/magnobiet/vanilla).
 
 ![Screen shot](screen-shot.png)
